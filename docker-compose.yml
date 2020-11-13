@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  node:
+    build: .
+    volumes:
+      - ./:/app
+  mongodb:
+    image: mongo
+    restart: always
+    logging:
+      driver: none
+    volumes:
+      - ./data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: test
+      MONGO_INITDB_ROOT_PASSWORD: test
