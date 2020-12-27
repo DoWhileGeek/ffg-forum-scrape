@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  node:
+  scraper:
     build: .
     volumes:
       - ./:/app
@@ -11,6 +11,8 @@ services:
       driver: none
     volumes:
       - ./data:/data/db
+    ports:
+      - "27017:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: test
       MONGO_INITDB_ROOT_PASSWORD: test
